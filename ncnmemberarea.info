@@ -1,0 +1,10 @@
+name = NCN Member Area Theme
+description = NCN Member Area Theme based off of tailwindcss.
+core = 7.x
+stylesheets[all][] = dist/main.css
+
+; Information added by Drupal.org packaging script on 2019-05-13
+version = "7.x-2.1"
+core = "7.x"
+project = "tailwindcss"
+datestamp = "1557777810"
