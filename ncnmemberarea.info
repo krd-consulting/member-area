@@ -3,8 +3,11 @@ description = NCN Member Area Theme based off of tailwindcss.
 core = 7.x
 stylesheets[all][] = dist/main.css
 
-; Information added by Drupal.org packaging script on 2019-05-13
-version = "7.x-2.1"
-core = "7.x"
-project = "tailwindcss"
-datestamp = "1557777810"
+regions[header] = Header
+regions[featured] = Featured
+regions[sidebar_first] = Left Sidebar
+regions[sidebar_second] = Right Sidebar
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[footer] = Footer
