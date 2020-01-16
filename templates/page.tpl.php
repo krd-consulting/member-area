@@ -73,9 +73,9 @@
  */
 ?>
 
-  <div id="page-wrapper"><div id="page" class="tw-bg-gray-100">
+  <div id="page-wrapper"><div id="page" class="tw-bg-gray-200 tw-min-h-screen">
 
-    <div id="header" class="tw-bg-white"><div class="tw-container tw-mx-auto tw-px-12 section clearfix">
+    <div id="header" class="tw-bg-white"><div class="tw-container tw-mx-auto tw-px-4 section clearfix">
 
       <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="tw-mr-2">
@@ -108,14 +108,14 @@
     </div></div> <!-- /.section, /#header -->
 
     <?php if ($main_menu || $secondary_menu): ?>
-      <nav id="navigation" class="tw-border tw-bg-white"><div class="tw-container tw-mx-auto tw-flex tw-justify-between tw-uppercase tw-font-semibold tw-px-8 section">
+      <nav id="navigation" class="tw-border tw-bg-white"><div class="tw-container tw-mx-auto tw-flex tw-justify-between tw-uppercase tw-font-semibold tw-px-2 section">
         <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('tw-py-4', 'links', 'inline', 'clearfix')))); ?>
         <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('tw-py-4', 'links', 'inline', 'clearfix')))); ?>
       </div></nav> <!-- /.section, /#navigation -->
     <?php endif; ?>
 
 	<?php if ($page['featured']): ?>
-		<div id="featured" class="tw-bg-blue-500 tw-text-white tw-mb-6"><div class="tw-container tw-mx-auto tw-px-8 tw-py-6">
+		<div id="featured" class="tw-bg-blue-500 tw-text-white tw-mb-6"><div class="tw-container tw-mx-auto tw-px-4 tw-py-6">
 			<?php print render($page['featured']);  ?>
 		</div></div>
 	<?php endif;  ?>		
@@ -126,7 +126,7 @@
 
     <?php print $messages; ?>
 
-    <div id="main-wrapper"><div id="main" class="tw-container tw-mx-auto tw-flex tw-mb-6 clearfix">
+    <div id="main-wrapper" class="tw-bg-gray-200" style="min-height: 60vh;"><div id="main" class="tw-container tw-mx-auto tw-flex tw-mb-6 clearfix">
 
       <?php if ($page['sidebar_first']): ?>
         <div id="sidebar-first" class="md:tw-w-1/4 tw-px-4"><div class="section">
@@ -136,11 +136,16 @@
 
       <div id="content" class="md:tw-flex-1 tw-px-4"><div class="section">
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-        <a id="main-content"></a>
-        <?php print render($title_prefix); ?>
-        <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
-        <?php print render($title_suffix); ?>
-        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+				<div class="tw-flex">
+        	<div class="tw-flex-1">
+        		<?php print render($title_prefix); ?>
+						<?php if ($title): ?><h1 class="tw-text-4xl tw-font-bold" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+        		<?php print render($title_suffix); ?>
+        	</div>
+					<div class="tw-flex-initial">
+						<?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+					</div>
+				</div>
         <?php print render($page['help']); ?>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
         <?php print render($page['content']); ?>
@@ -155,7 +160,7 @@
 
     </div></div> <!-- /#main, /#main-wrapper -->
 
-    <div id="footer" class="tw-bg-black"><div class="tw-container tw-mx-auto tw-flex section">
+    <div id="footer" class="tw-bg-gray-200"><div class="tw-container tw-mx-auto tw-flex section">
       <?php print render($page['footer']); ?>
     </div></div> <!-- /.section, /#footer -->
 
