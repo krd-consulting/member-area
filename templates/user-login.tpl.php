@@ -1,16 +1,17 @@
-<form action="<?php echo $form['#action'];  ?>" metod="<?php echo $form['#method'];  ?>" class="tw-w-full">
-  <div class="md:tw-w-2/3 md:tw-mx-auto tw-bg-white tw-rounded-t-lg tw-shadow-lg tw-px-4 tw-py-4">
+<div class="tw-w-full">
+  <div class="md:tw-w-2/3 md:tw-mx-auto tw-bg-white tw-rounded-t-lg tw-shadow-lg tw-px-4 tw-py-4">	
+		<?php print_r($messages);  ?>
     <div class="form-item form-type-textfield form-item-name tw-flex tw-items-center">
       <label for="<?php echo $form['name']['#id'];  ?>" class="tw-text-lg tw-mb-2 md:tw-mb-0 md:tw-w-1/5"><?php echo $form['name']['#title']  ?></label>
 			<input id="<?php echo $form['name']['#id'];  ?>" type="text" 
 				name="<?php echo $form['name']['#name'];  ?>" 
-				class="tw-w-full tw-p-2 tw-border-transparent tw-rounded tw-bg-gray-200 hover:tw-bg-white hover:tw-border-solid hover:tw-border-gray-500 tw-outline-none focus:tw-bg-white focus:tw-shadow-outline">
+				class="tw-w-full tw-p-2 tw-border-transparent tw-rounded tw-bg-gray-200 hover:tw-bg-white hover:tw-border-solid hover:tw-border-gray-500 tw-outline-none focus:tw-bg-white focus:tw-shadow-outline <?php if($form['pass']['#needs_validation']) echo 'tw-border-red-500 hover:tw-border-red-500';  ?>">
     </div>
     <div class="form-item form-type-textfield form-item-name tw-flex tw-items-center">
       <label for="<?php echo $form['pass']['#id'];  ?>" class="tw-text-lg tw-mb-2 md:tw-mb-0 md:tw-w-1/5"><?php echo $form['pass']['#title']  ?></label>
 			<input id="<?php echo $form['pass']['#id'];  ?>" type="password" 
 				name="<?php echo $form['pass']['#name'];  ?>" 
-				class="tw-w-full tw-p-2 tw-border-transparent tw-rounded tw-bg-gray-200 hover:tw-bg-white hover:tw-border-solid hover:tw-border-gray-500 tw-outline-none focus:tw-bg-white focus:tw-shadow-outline">
+				class="tw-w-full tw-p-2 tw-border-transparent tw-rounded tw-bg-gray-200 hover:tw-bg-white hover:tw-border-solid hover:tw-border-gray-500 tw-outline-none focus:tw-bg-white focus:tw-shadow-outline <?php if($form['pass']['#needs_validation']) echo 'tw-border-red-500 hover:tw-border-red-500';  ?> ">
     </div>
 	</div>
 	<?php
@@ -28,4 +29,4 @@
 			</div>
 		</div>
 	</div>
-</form>
+</div>
