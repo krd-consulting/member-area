@@ -72,18 +72,19 @@
  * @ingroup themeable
  */
 ?>
-
   <div id="page-wrapper"><div id="page" class="tw-bg-gray-200 tw-min-h-screen">
 
-    <div id="header" class="tw-bg-white"><div class="tw-container tw-mx-auto tw-px-4 section clearfix">
+    <div id="header" class="tw-bg-white"><div class="tw-flex tw-justify-between tw-items-center tw-container tw-mx-auto tw-px-4 section">
 
+
+			<div>
       <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="tw-mr-2">
           <img class="tw-block" style="height: 55px;" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a>
       <?php endif; ?>
 
-      <?php if ($site_name || $site_slogan): ?>
+			<?php if ($site_name || $site_slogan): ?>
         <div id="name-and-slogan">
           <?php if ($site_name): ?>
             <?php if ($title): ?>
@@ -102,9 +103,12 @@
           <?php endif; ?>
         </div> <!-- /#name-and-slogan -->
       <?php endif; ?>
-
-      <?php print render($page['header']); ?>
-
+			</div>
+		 
+			<div>
+			<?php print render($page['header']); ?>
+			</div>
+	
     </div></div> <!-- /.section, /#header -->
 
     <?php if ($main_menu || $secondary_menu): ?>
@@ -131,10 +135,10 @@
       	<?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 				
 				<?php if(!empty($title)):  ?>
-				<div class="tw-flex tw-bg-blue-500 tw-text-white">
+				<div class="tw-flex tw-text-white" style="background-color: #00673e;">
         	<div class="tw-flex-1 tw-container tw-mx-auto tw-px-4 tw-py-8">
         		<?php print render($title_prefix); ?>
-						<h1 class="tw-text-4xl tw-font-bold" id="page-title"><?php print $title; ?></h1>
+						<h1 class="tw-text-3xl tw-uppercase tw-font-bold" id="page-title" style="text-shadow: 2px 2px 2px #000;"><?php print $title; ?></h1>
         		<?php print render($title_suffix); ?>
         	</div>
 				</div>

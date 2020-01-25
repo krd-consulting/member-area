@@ -72,40 +72,44 @@
  * @ingroup themeable
  */
 ?>
+	  <div id="page-wrapper"><div id="page" class="tw-bg-gray-200 tw-min-h-screen">
 
-  <div id="page-wrapper"><div id="page" class="tw-bg-gray-200 tw-min-h-screen">
+  	  <div id="header" class="tw-bg-white"><div class="tw-flex tw-justify-between tw-items-center tw-container tw-mx-auto tw-px-4 section">
 
-    <div id="header" class="tw-bg-white"><div class="tw-container tw-mx-auto tw-px-4 section clearfix">
 
-      <?php if ($logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="tw-mr-2">
-          <img class="tw-block" style="height: 55px;" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
+				<div>
+      		<?php if ($logo): ?>
+        		<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="tw-mr-2">
+          		<img class="tw-block" style="height: 55px;" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        		</a>
+      		<?php endif; ?>
 
-      <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan">
-          <?php if ($site_name): ?>
-            <?php if ($title): ?>
-              <div id="site-name" class="tw-text-2xl"><strong>
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </strong></div>
-            <?php else: /* Use h1 when the content title is empty */ ?>
-              <h1 id="site-name">
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </h1>
-            <?php endif; ?>
-          <?php endif; ?>
+					<?php if ($site_name || $site_slogan): ?>
+        		<div id="name-and-slogan">
+          		<?php if ($site_name): ?>
+            		<?php if ($title): ?>
+              		<div id="site-name" class="tw-text-2xl"><strong>
+                		<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+              		</strong></div>
+            		<?php else: /* Use h1 when the content title is empty */ ?>
+              		<h1 id="site-name">
+                		<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+              		</h1>
+            		<?php endif; ?>
+          		<?php endif; ?>
 
-          <?php if ($site_slogan): ?>
-            <div id="site-slogan"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
-        </div> <!-- /#name-and-slogan -->
-      <?php endif; ?>
-
-      <?php print render($page['header']); ?>
-
-    </div></div> <!-- /.section, /#header -->
+          		<?php if ($site_slogan): ?>
+            		<div id="site-slogan"><?php print $site_slogan; ?></div>
+          		<?php endif; ?>
+        		</div> <!-- /#name-and-slogan -->
+      		<?php endif; ?>
+				</div>
+		 
+				<div>
+					<?php print render($page['header']); ?>
+				</div>
+	
+	   </div></div> <!-- /.section, /#header -->
 
     <?php if ($main_menu || $secondary_menu): ?>
       <nav id="navigation" class="tw-border tw-bg-white"><div class="tw-container tw-mx-auto tw-flex tw-justify-between tw-uppercase tw-font-semibold tw-px-2 section">
