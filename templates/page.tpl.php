@@ -124,26 +124,29 @@
       <!--<div id="breadcrumb"><?php print $breadcrumb; ?></div>-->
     <?php endif; ?>
 
-    <?php print $messages; ?>
 
     <div id="main-wrapper" class="tw-bg-gray-200" style="min-height: 60vh;"><div id="main" class="tw-mb-6 clearfix">
 
       <div id="content" class="md:tw-flex-1"><div class="section">
-        <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-
+      	<?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+				
 				<?php if(!empty($title)):  ?>
-				<div class="tw-flex tw-bg-blue-500 tw-text-white tw-mb-4">
+				<div class="tw-flex tw-bg-blue-500 tw-text-white">
         	<div class="tw-flex-1 tw-container tw-mx-auto tw-px-4 tw-py-8">
         		<?php print render($title_prefix); ?>
 						<h1 class="tw-text-4xl tw-font-bold" id="page-title"><?php print $title; ?></h1>
         		<?php print render($title_suffix); ?>
         	</div>
-					<div class="tw-flex-initial">
-						<?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-					</div>
 				</div>
 				<?php endif;  ?>
-				<div class="tw-container tw-mx-auto tw-flex tw-px-4">	
+
+				<?php if(!empty($messages)): ?>
+				<div class="tw-container tw-mx-auto tw-px-4 tw-mt-4">
+					<?php print $messages; ?>
+				</div>			
+				<?php endif;  ?>
+
+				<div class="tw-container tw-mx-auto tw-flex tw-px-4 tw-mt-6">	
 					<?php print render($page['help']); ?>
 				
 					<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
@@ -153,9 +156,16 @@
           		<?php print render($page['sidebar_first']); ?>
         		</div></div> <!-- /.section, /#sidebar-first -->
       		<?php endif; ?>
-				
-					<?php print render($page['content']); ?>
-			
+
+					<div class="tw-flex-1">
+						
+						<div>
+							<?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+						</div>
+						
+						<?php print render($page['content']); ?>
+					</div>
+
 					<?php if ($page['sidebar_second']): ?>
         		<div id="sidebar-second" class="column sidebar"><div class="section">
           		<?php print render($page['sidebar_second']); ?>
