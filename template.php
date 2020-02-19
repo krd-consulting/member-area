@@ -11,6 +11,15 @@ function ncnmemberarea_theme() {
   	),
 	);
 
+  $items['user_login_block'] = array(
+  	'render element' => 'form',
+  	'path' => drupal_get_path('theme', 'ncnmemberarea') . '/templates',
+  	'template' => 'block--user-login',
+  	'preprocess functions' => array(
+  	'ncnmemberarea_preprocess_user_login'
+  	),
+	);
+
 	// create custom user-profile-edit.tpl.php
 	$items['user_profile_form'] = array(
 			'arguments' => array('form' => NULL),
