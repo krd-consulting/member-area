@@ -74,7 +74,9 @@
 ?>
   <div id="page-wrapper"><div id="page" class="tw-bg-gray-200 tw-min-h-screen">
 
-    <div id="header" class="tw-bg-white"><div class="tw-flex tw-justify-between tw-items-center tw-container tw-mx-auto tw-px-4 section">
+    <?php if ($page['highlighted']): ?><div id="highlighted" class="tw-bg-blue-800"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+		
+		<div id="header" class="tw-bg-white"><div class="tw-flex tw-justify-between tw-items-center tw-container tw-mx-auto tw-px-4 section">
 
 
 			<div>
@@ -132,7 +134,6 @@
     <div id="main-wrapper" class="tw-bg-gray-200" style="min-height: 60vh;"><div id="main" class="tw-mb-6 clearfix">
 
       <div id="content" class="md:tw-flex-1"><div class="section">
-      	<?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 				
 				<?php if(!empty($title)):  ?>
 				<div class="tw-flex tw-text-white" style="background-color: #00673e;">

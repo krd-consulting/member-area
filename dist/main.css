@@ -20,6 +20,11 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+
+.message.error {
+	display: none;
+}
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -35138,3 +35143,6 @@ form ul.token-input-list:focus {
 	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
+.block {
+	margin-bottom: 0;
+}

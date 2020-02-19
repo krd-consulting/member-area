@@ -21,7 +21,7 @@
 	<div class="md:tw-w-2/3 md:tw-mx-auto tw-bg-gray-100 tw-rounded-b-lg tw-shadow-lg tw-px-4 tw-py-1">
 		<div class="form-actions form-wrapper tw-flex tw-justify-between tw-items-center" id="edit-actions">
 			<div>	
-				<a href="/user/register" class="tw-font-base tw-cursor-pointer hover:tw-bg-blue-600 hover:tw-border-transparent  tw-border-2 tw-border-gray-700 tw-text-gray-700 hover:tw-text-blue-100 tw-p-2 tw-rounded tw-font-semibold">Create Account</a>
+				<!--a href="/user/register" class="tw-font-base tw-cursor-pointer hover:tw-bg-blue-600 hover:tw-border-transparent  tw-border-2 tw-border-gray-700 tw-text-gray-700 hover:tw-text-blue-100 tw-p-2 tw-rounded tw-font-semibold">Create Account</a-->
 			</div>
 			<div>
 				<input type="<?php echo $form['actions']['submit']['#type'];  ?>" id="<?php echo $form['actions']['submit']['#id'];  ?>" name="<?php echo $form['actions']['submit']['#name'];  ?>" value="<?php echo $form['actions']['submit']['#value'];  ?>" class="form-submit tw-font-base tw-cursor-pointer hover:tw-bg-blue-600 tw-bg-blue-500 tw-text-blue-100 tw-border-transparent tw-p-2 tw-rounded tw-font-semibold">
